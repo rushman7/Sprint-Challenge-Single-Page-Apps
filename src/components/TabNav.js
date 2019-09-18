@@ -1,20 +1,11 @@
 import React, { useState } from "react";
-import { Tab, Menu, Icon } from "semantic-ui-react";
+import { Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
-
-// TODO: Add missing menu/tabs/nav below
-
-// Review Semantic UI Component options for nav-like UI:
-// https://react.semantic-ui.com/collections/menu/
-// https://react.semantic-ui.com/modules/tab/
-// https://react.semantic-ui.com/elements/button/
-// https://react.semantic-ui.com/collections/breadcrumb/
 
 export default function TabNav() {
   const [activeItem, setActiveItem] = useState();
 
   const handleItemClick = (e, { name }) => setActiveItem(name)
-
   return (
     <Menu attached='top' tabular>
       <Menu.Item
@@ -22,7 +13,9 @@ export default function TabNav() {
         active={activeItem === 'homepage'}
         onClick={handleItemClick}
       >
+      <NavLink to="/home">
         <Icon name='home' size='large'/>Home Page
+      </NavLink>
       </Menu.Item>
 
       <Menu.Item
