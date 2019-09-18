@@ -23,7 +23,9 @@ export default function TabNav() {
         active={activeItem === 'characters'}
         onClick={handleItemClick}
       >
+      <NavLink to="/characters">
         <Icon name='users' size='large' />Characters
+      </NavLink>
       </Menu.Item>
 
       <Menu.Item
