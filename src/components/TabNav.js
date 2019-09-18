@@ -43,7 +43,9 @@ export default function TabNav() {
         active={activeItem === 'episodes'}
         onClick={handleItemClick}
       >
+      <NavLink to="/episodes">
         <Icon name='video camera' size='large' />Episodes
+      </NavLink>
       </Menu.Item>
     </Menu>
   )
