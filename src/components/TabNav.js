@@ -22,7 +22,7 @@ export default function TabNav() {
         active={activeItem === 'homepage'}
         onClick={handleItemClick}
       >
-        Home Page
+        <Icon name='home' size='large'/>Home Page
       </Menu.Item>
 
       <Menu.Item
@@ -30,7 +30,7 @@ export default function TabNav() {
         active={activeItem === 'characters'}
         onClick={handleItemClick}
       >
-        Characters
+        <Icon name='users' size='large' />Characters
       </Menu.Item>
 
       <Menu.Item
@@ -38,7 +38,7 @@ export default function TabNav() {
         active={activeItem === 'locations'}
         onClick={handleItemClick}
       >
-        Locations
+        <Icon name='map outline' size='large' />Locations
       </Menu.Item>
 
       <Menu.Item
@@ -46,7 +46,7 @@ export default function TabNav() {
         active={activeItem === 'episodes'}
         onClick={handleItemClick}
       >
-        Episodes
+        <Icon name='video camera' size='large' />Episodes
       </Menu.Item>
     </Menu>
   )
