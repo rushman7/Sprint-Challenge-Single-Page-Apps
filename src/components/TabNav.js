@@ -33,7 +33,9 @@ export default function TabNav() {
         active={activeItem === 'locations'}
         onClick={handleItemClick}
       >
+      <NavLink to="/locations">
         <Icon name='map outline' size='large' />Locations
+      </NavLink>
       </Menu.Item>
 
       <Menu.Item

@@ -4,6 +4,7 @@ import Header from "./components/Header.js";
 import { Route } from 'react-router-dom';
 import WelcomePage from './components/WelcomePage';
 import CharacterList from './components/CharacterList';
+import LocationList from './components/LocationsList';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <TabNav />
       <Route path="/home" component={WelcomePage}/>
       <Route path="/characters" component={CharacterList}/>
+      <Route path="/locations" component={LocationList}/>
     </main>
   );
 }

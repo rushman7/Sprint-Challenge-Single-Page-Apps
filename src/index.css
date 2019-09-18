@@ -80,5 +80,11 @@ header h1 {
   color: rgb(163, 158, 163);
   padding-left: 13px;
   font-size: 13px;
-  
+}
+
+.location-card {
+  border: 1px solid black;
+  width: 40%;
+  margin: 15px auto;
+  padding: 10px;
 }
