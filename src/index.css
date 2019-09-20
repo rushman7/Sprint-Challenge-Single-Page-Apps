@@ -89,3 +89,12 @@ header h1 {
   padding: 10px;
   height: auto;
 }
+
+.search_name {
+  width: 70%;
+  margin: 5px auto;
+  display: flex;
+  padding: 2px 10px;
+  border-radius: 10px;
+  box-shadow: #000A 4px 4px 4px;
+}
