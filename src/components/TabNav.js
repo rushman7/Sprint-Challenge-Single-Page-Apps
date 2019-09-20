@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Menu, Icon } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
 
-export default function TabNav() {
+export default function TabNav(props) {
   const [activeItem, setActiveItem] = useState();
 
-  const handleItemClick = (e, { name }) => setActiveItem(name)
+  const handleItemClick = (e, { name }) => {
+    return (
+      setActiveItem(name),
+      props.history.push(`/${name}`)
+    )
+  }
   return (
     <Menu attached='top' tabular>
       <Menu.Item
@@ -13,9 +17,7 @@ export default function TabNav() {
         active={activeItem === 'homepage'}
         onClick={handleItemClick}
       >
-      <NavLink to="/home">
-        <Icon name='home' size='large'/>Home Page
-      </NavLink>
+      <Icon name='home' size='large'/>Home Page
       </Menu.Item>
 
       <Menu.Item
@@ -23,9 +25,7 @@ export default function TabNav() {
         active={activeItem === 'characters'}
         onClick={handleItemClick}
       >
-      <NavLink to="/characters">
-        <Icon name='users' size='large' />Characters
-      </NavLink>
+      <Icon name='users' size='large' />Characters
       </Menu.Item>
 
       <Menu.Item
@@ -33,9 +33,7 @@ export default function TabNav() {
         active={activeItem === 'locations'}
         onClick={handleItemClick}
       >
-      <NavLink to="/locations">
-        <Icon name='map outline' size='large' />Locations
-      </NavLink>
+      <Icon name='map outline' size='large' />Locations
       </Menu.Item>
 
       <Menu.Item
@@ -43,9 +41,7 @@ export default function TabNav() {
         active={activeItem === 'episodes'}
         onClick={handleItemClick}
       >
-      <NavLink to="/episodes">
-        <Icon name='video camera' size='large' />Episodes
-      </NavLink>
+      <Icon name='video camera' size='large' />Episodes
       </Menu.Item>
     </Menu>
   )

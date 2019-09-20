@@ -6,14 +6,11 @@ export default function CharacterList() {
   const [charList, setCharList] = useState();
 
   useEffect(() => {
-    const getChars = () => {
-      axios.get('https://rickandmortyapi.com/api/character/')
-        .then(res =>{
-          setCharList(res.data.results)
-        })
-        .catch(err => console.log('Error: ', err));
-    }
-    getChars()
+    axios.get('https://rickandmortyapi.com/api/character/')
+      .then(res =>{
+        setCharList(res.data.results)
+      })
+      .catch(err => console.log('Error: ', err));
 
   }, []);
 
@@ -23,7 +20,7 @@ export default function CharacterList() {
 
   return (
     <section className="character-list grid-view">
-      {charList.map(char => <CharacterCard char={char}/>)}
+      {charList.map((char, index) => <CharacterCard char={char} key={index}/>)}
     </section>
   );
 }

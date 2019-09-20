@@ -76,7 +76,7 @@ header h1 {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  margin-top: 10px;
+  margin: 10px 0px 15px 0px;
   color: rgb(163, 158, 163);
   padding-left: 13px;
   font-size: 13px;

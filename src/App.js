@@ -11,8 +11,8 @@ export default function App() {
   return (
     <main>
       <Header />
-      <TabNav />
-      <Route path="/home" component={WelcomePage}/>
+      <Route path="/" render={props => <TabNav {...props} />}/>
+      <Route path="/homepage" component={WelcomePage}/>
       <Route path="/characters" component={CharacterList}/>
       <Route path="/locations" component={LocationList}/>
       <Route path="/episodes" component={EpisodeList}/>
