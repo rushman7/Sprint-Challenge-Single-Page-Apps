@@ -21,7 +21,6 @@ export default function CharacterList() {
 
   const filterOnChange = (e) => {
     setCharSearch(e.target.value);
-    console.log(charSearch)
   }
 
   let filteredList = charList.filter(charName => charName.name.indexOf(charSearch) !== -1)
