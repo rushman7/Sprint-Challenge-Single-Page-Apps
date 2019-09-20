@@ -6,7 +6,7 @@ export default function SearchForm({ onSearch }) {
     <section className="search-form">
       <form onSubmit={() => onSearch(name)}>
         <input
-          onChange={handleInputChange}
+          // onChange={handleInputChange}
           placeholder="name"
           value={name}
           name="name"
