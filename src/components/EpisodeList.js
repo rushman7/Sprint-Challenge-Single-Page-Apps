@@ -4,6 +4,7 @@ import EpisodeCard from './EpisodeCard';
 
 export default function EpisodesList() {
   const [episodeList, setEpisodeList] = useState();
+  const [episodeSearch, setEpisodeSearch] = useState('');
 
   useEffect(() => {
     axios.get('https://rickandmortyapi.com/api/episode/')
@@ -17,9 +18,24 @@ export default function EpisodesList() {
     return <p>Loading data...</p>
   }
 
+  const filterOnChange = (e) => {
+    setEpisodeSearch(e.target.value);
+  }
+
+  let filteredList = episodeList.filter(episodeName => episodeName.name.indexOf(episodeSearch) !== -1)
+
   return (
-    <section className="location-list grid-view">
-      {episodeList.map((episode, index) => <EpisodeCard episode={episode} key={index}/>)}
-    </section>
+    <div>
+      <input 
+        className="search_name"
+        type="text"
+        placeholder="Search episode..."
+        value={episodeSearch}
+        onChange={filterOnChange}
+      />
+      <section className="location-list grid-view">
+        {filteredList.map((episode, index) => <EpisodeCard episode={episode} key={index}/>)}
+      </section>
+    </div>
   );
 }
